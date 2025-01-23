@@ -1,9 +1,13 @@
 import express from "express";
 import http from "http";
-import envUtil from "./utils/env.utils.js";
+import envUtil from "./utils/env.util.js";
 import argsUtil from "./utils/args.util.js";
+import indexRouter from "./routes/index.router.js";
 import cookieParser from "cookie-parser";
 import morgan from "morgan";
+import session from "express-session";
+import MongoStore from "connect-mongo";
+import cors from "cors";
 
 
 //SERVER
@@ -41,3 +45,5 @@ app.use(
 //CONFIGURACION DE CORS
 app.use(cors({origin: true, credentials: true}));
 
+//ROUTES
+app.use(indexRouter);

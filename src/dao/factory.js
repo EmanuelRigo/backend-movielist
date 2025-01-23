@@ -1,4 +1,4 @@
-import dbConnect from "../utils/dbconnect.utils.js";
+import dbConnect from "../utils/dbConnect.util.js";
 import argsUtil from "../utils/args.util.js";
 
 const { persistence } = argsUtil;

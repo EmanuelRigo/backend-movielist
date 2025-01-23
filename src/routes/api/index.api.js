@@ -1,4 +1,4 @@
-import CustomRouter from "../../utils/customRouter.util";
+import CustomRouter from "../../utils/customRouter.util.js";
 
 class ApiRouter extends CustomRouter {
   constructor() {
