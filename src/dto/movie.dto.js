@@ -3,7 +3,7 @@ import argsUtil from "../utils/args.util.js";
 
 const { persistence } = argsUtil;
 
-class ProductsDTO {
+class MovieDTO {
   constructor(data) {
     persistence !== "mongo" &&
       (this._id = crypto.randomBytes(12).toString("hex"));
@@ -15,4 +15,4 @@ class ProductsDTO {
   }
 }
 
-export default ProductsDTO
+export default MovieDTO

@@ -23,10 +23,10 @@ switch (persistence) {
     console.log("connected to mongo system");
     dbConnect();
     const { default: MoviesManagerMongo } = await import(
-      "./mongo/managers/movies.manager.js"
+      "./mongo/managers/movie.manager.js"
     );
     const { default: UsersManagerMongo } = await import(
-      "./mongo/managers/users.manager.js"
+      "./mongo/managers/user.manager.js"
     );
     dao = {
       MoviesManager: MoviesManagerMongo,
