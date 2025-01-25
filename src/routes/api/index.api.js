@@ -1,6 +1,5 @@
 import CustomRouter from "../../utils/customRouter.util.js";
-import moviesApi from "./movies.api.js";
-
+import moviesApiRouter from "./movies.api.js";
 class ApiRouter extends CustomRouter {
   constructor() {
     super();
@@ -9,9 +8,9 @@ class ApiRouter extends CustomRouter {
 
     init = () => {
         this.use("/movies", ["PUBLIC"], moviesApiRouter);
-        this.use("/users", ["PUBLIC"], usersApiRouter);
-        this.use("/sessions", ["PUBLIC"], sessionsApiRouter);
-        this.use("/cookies", ["PUBLIC"], cookiesApiRouter);
+        // this.use("/users", ["PUBLIC"], usersApiRouter);
+        // this.use("/sessions", ["PUBLIC"], sessionsApiRouter);
+        // this.use("/cookies", ["PUBLIC"], cookiesApiRouter);
     }
 }
 

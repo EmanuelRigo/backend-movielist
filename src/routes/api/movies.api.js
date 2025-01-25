@@ -1,11 +1,11 @@
 import CustomRouter from "../../utils/customRouter.util.js";
 import {
-  createMoviesController,
-  destroyController,
-  readAllController,
-  readOneMoviesController,
+  createMovieController,
+  destroyMovieController,
+  readAllMoviesController,
+  readOneMovieController,
   readMoviesController,
-  updateController,
+  updateMovieController,
 } from "../../controller/movies.controllers.js";
 
 class MoviesApiRouter extends CustomRouter {
@@ -14,17 +14,17 @@ class MoviesApiRouter extends CustomRouter {
     this.init();
   }
   init = () => {
-    this.create("/", ["USER"], createMoviesController);
+    this.create("/", ["USER"], createMovieController);
 
     this.read("/", ["PUBLIC"], readMoviesController);
 
-    this.read("/all", ["PUBLIC"], readAllController);
+    this.read("/all", ["PUBLIC"], readAllMoviesController);
 
-    this.read("/:pid", ["PUBLIC"], readOneMoviesController);
+    this.read("/:pid", ["PUBLIC"], readOneMovieController);
 
-    this.update("/:id", ["USER"], updateController);
+    this.update("/:id", ["USER"], updateMovieController);
 
-    this.destroy("/:id", ["PUBLIC"], destroyController);
+    this.destroy("/:id", ["PUBLIC"], destroyMovieController);
   };
 }
 
