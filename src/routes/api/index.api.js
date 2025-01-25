@@ -1,4 +1,5 @@
 import CustomRouter from "../../utils/customRouter.util.js";
+import moviesApi from "./movies.api.js";
 
 class ApiRouter extends CustomRouter {
   constructor() {
