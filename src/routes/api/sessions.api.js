@@ -4,52 +4,33 @@ import { verifyTokenUtil } from "../../utils/token.util.js";
 
 import dao from "../../dao/factory.js";
 const { UsersManager } = dao;
-const {readById} = UsersManager;
+const { readById } = UsersManager;
 
+console.log("CustomRouter:", CustomRouter);
 class SessionApiRouter extends CustomRouter {
   constructor() {
     super();
     this.init();
   }
   init = () => {
-    //REGISTER
-    this.create(
-      "/register",
-      ["PUBLIC"],
-      register
-    );
+    // REGISTER
+    this.create("/register", ["PUBLIC"], register);
 
-    //LOGIN
-    this.create(
-      "/login",
-      ["PUBLIC"],
-      login
-    );
+    // LOGIN
+    this.create("/login", ["PUBLIC"], login);
 
-    //SINGOUT
-    this.create(
-      "/signout",
-      ["PUBLIC"],
-      signout
-    );
+    // SIGNOUT
+    this.create("/signout", ["PUBLIC"], signout);
 
-    //ONLINE
-    this.create(
-      "/online",
-      ["PUBLIC"],
-      onlineToken
-    );
+    // ONLINE
+    this.create("/online", ["PUBLIC"], onlineToken);
 
     // GOOGLE
-    this.read(
-      "/google",
-      ["PUBLIC"],
+    this.read("/google", ["PUBLIC"], 
       // passportCb("google", { scope: ["email", "profile"] })
     );
 
-    this.read(
-      "/google/cb",
-      ["PUBLIC"],
+    this.read("/google/cb", ["PUBLIC"], 
       // passportCb("google", { session: false }),
       google
     );
@@ -94,7 +75,7 @@ async function online(req, res, next) {
 }
 
 async function onlineToken(req, res, next) {
-  const message = req.user.email.toUpperCase() + "IS ONLINE";
+  const message = req.user.email.toUpperCase() + " IS ONLINE";
   const response = true;
   return res.json200(response, message);
 }
