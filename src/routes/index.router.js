@@ -1,5 +1,6 @@
 import CustomRouter from "../utils/customRouter.util.js";
 import apiRouter from "./api/index.api.js";
+console.log("apiRouter:", apiRouter);
 
 class IndexRouter extends CustomRouter {
   constructor() {

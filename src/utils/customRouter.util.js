@@ -9,9 +9,12 @@ class CustomRouter {
     this._router = Router();
   }
   getRouter = () => this._router;
+  
   applyCallbacks = (callbacks) =>
+    
     callbacks.map((cb) => async (req, res, next) => {
       try {
+        console.log("cb:", cb);
         await cb(req, res, next);
       } catch (error) {
         return next(error);

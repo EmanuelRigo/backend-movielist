@@ -20,17 +20,17 @@ class SessionApiRouter extends CustomRouter {
     this.create("/login", ["PUBLIC"], login);
 
     // SIGNOUT
-    this.create("/signout", ["PUBLIC"], signout);
+    this.create("/signout", ["USER", "ADMIN"], signout);
 
     // ONLINE
     this.create("/online", ["PUBLIC"], onlineToken);
 
     // GOOGLE
-    this.read("/google", ["PUBLIC"], 
+    this.read("/google", ["PUBLIC"], console.log("google"),
       // passportCb("google", { scope: ["email", "profile"] })
     );
 
-    this.read("/google/cb", ["PUBLIC"], 
+    this.read("/google/cb", ["PUBLIC"], console.log("google cb"),
       // passportCb("google", { session: false }),
       google
     );
